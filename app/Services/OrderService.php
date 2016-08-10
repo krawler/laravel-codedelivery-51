@@ -9,6 +9,7 @@
 namespace CodeDelivery\Services;
 
 
+use CodeDelivery\Models\Order;
 use CodeDelivery\Repositories\ClientRepository;
 use CodeDelivery\Repositories\CupomRepository;
 use CodeDelivery\Repositories\OrderRepository;
@@ -64,7 +65,8 @@ class OrderService {
 
             foreach ($items as $item){
                 $item['price'] = $this->productRepository->find($item['product_id'])->price;
-                //$order->items()->create($item);
+
+                $order->items()->create($item);
                 $total += $item['price'] * $item['qtd'];
             }
 
@@ -74,6 +76,7 @@ class OrderService {
             }
             $order->save();
             DB::commit();
+            return $order;
         }catch(\Exception $e){
             DB::rollback();
             throw $e;
@@ -87,4 +90,16 @@ class OrderService {
         $userId = $this->clientRepository->find($id,['user_id'])->user_id;
         $this->userRepository->update($data['user'],$userId);
     }
+
+    public function updateStatus($id, $idDeliveryman, $status)
+    {
+        $order = $this->orderRepository->getByIdAndDeliveryman($id, $idDeliveryman);
+        if($order instanceof Order){
+            $order->status = $status;
+            $order->save();
+            return $order;
+        }
+        return false;
+    }
+
 }

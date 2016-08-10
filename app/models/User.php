@@ -1,16 +1,24 @@
 <?php
 namespace CodeDelivery\Models;
 
-use Illuminate\Contracts\Auth\Authenticatable;
+
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Auth\Passwords\CanResetPassword;
 
 
 
-class User extends Model implements Transformable, Authenticatable
+class User extends Model implements Transformable, AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
-    use TransformableTrait;
+    use TransformableTrait, Authenticatable, Authorizable, CanResetPassword;
+
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -35,54 +43,4 @@ class User extends Model implements Transformable, Authenticatable
         return $this->hasOne(Client::class);
     }
 
-    /**
-     * Get the unique identifier for the user.
-     *
-     * @return mixed
-     */
-    public function getAuthIdentifier()
-    {
-        // TODO: Implement getAuthIdentifier() method.
-    }
-
-    /**
-     * Get the password for the user.
-     *
-     * @return string
-     */
-    public function getAuthPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Get the token value for the "remember me" session.
-     *
-     * @return string
-     */
-    public function getRememberToken()
-    {
-        return $this->remember_token;
-    }
-
-    /**
-     * Set the token value for the "remember me" session.
-     *
-     * @param  string $value
-     * @return void
-     */
-    public function setRememberToken($value)
-    {
-        // TODO: Implement setRememberToken() method.
-    }
-
-    /**
-     * Get the column name for the "remember me" token.
-     *
-     * @return string
-     */
-    public function getRememberTokenName()
-    {
-        // TODO: Implement getRememberTokenName() method.
-    }
 }
