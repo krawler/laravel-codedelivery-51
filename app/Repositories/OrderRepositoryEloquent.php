@@ -28,6 +28,7 @@ class OrderRepositoryEloquent extends BaseRepository implements OrderRepository
         }
         return $result;
     }
+
     /**
      * Specify Model class name
      *
@@ -38,13 +39,16 @@ class OrderRepositoryEloquent extends BaseRepository implements OrderRepository
         return Order::class;
     }
 
-    
-
     /**
      * Boot up the repository, pushing criteria
      */
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    public function presenter()
+    {
+        return \CodeDelivery\Presenters\OrderPresenter::class;
     }
 }

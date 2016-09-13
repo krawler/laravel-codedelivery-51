@@ -1,0 +1,26 @@
+<ion-view>
+    <div class="bar bar-subheader">
+        <h2 class="title">Detalhes do produto</h2>
+    </div>
+    <ion-content class="padding has-subheader">
+        <div class="list card">
+            <h2>{{product.name}}</h2>
+
+               Qtd: {{product.qtd}} <br />
+               <i class="ion ion-cash">{{o.price}}</i>
+
+            <label class="item item-input">
+                Quantidade
+                <input type="text" placeholder="Quantidade" ng-model="product.qtd" />
+            </label>
+            <button type="button" class="button button-assertive button-full" ng-click="updateQtd()">
+                Alterar quantidade
+            </button>
+            <div class="item item-body">
+                <h2>Descrição</h2>
+                <p>{{product.description}}</p>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>
