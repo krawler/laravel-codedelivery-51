@@ -29,6 +29,8 @@ Route::group(['middleware' => 'cors'], function(){
                 'as'=> 'orders.update_status']);
         });
 
+        Route::get('authenticated', 'Api\UserController@authenticated');
+        Route::get('cupom/{code}', 'Api\CupomController@show');
     });
 });
 
