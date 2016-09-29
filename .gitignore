@@ -1,5 +1,9 @@
 /vendor
 /node_modules
+<<<<<<< HEAD
+=======
+/public/storage
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 Homestead.yaml
 Homestead.json
 .env
