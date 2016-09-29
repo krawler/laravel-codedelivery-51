@@ -65,6 +65,7 @@ $factory->define(CodeDelivery\Models\Cupom::class, function (Faker\Generator $fa
         'code' => rand(100,10000),
         'value' => rand(50,100)
     ];
+<<<<<<< HEAD
 });
 
 $factory->define(CodeDelivery\Models\OauthClient::class, function(){
@@ -73,4 +74,6 @@ $factory->define(CodeDelivery\Models\OauthClient::class, function(){
         'secret' => 'secret',
         'name' => 'Minha App Mobile'
     ];
+=======
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 });

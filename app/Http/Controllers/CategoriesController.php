@@ -2,7 +2,10 @@
 
 namespace CodeDelivery\Http\Controllers;
 
+<<<<<<< HEAD
 use CodeDelivery\Http\Controllers\Controller;
+=======
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 use CodeDelivery\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 

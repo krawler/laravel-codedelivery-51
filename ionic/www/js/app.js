@@ -9,7 +9,7 @@ angular.module('starter.services',[]);
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angular-oauth2', 'ngResource'])
 
 .constant('appConfig',{
-   baseUrl : 'http://localhost:8000'
+   baseUrl : 'http://192.168.1.100:8000'
 })
 
 .run(function($ionicPlatform) {
@@ -84,11 +84,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller : 'ClientCheckoutDetailCtrl'
     })
 
+    .state('client.checkout_sucessful', {
+      cache: false,
+      url : '/checkout/sucessful',
+      templateUrl: 'templates/client/checkout_sucessful.html',
+      controller : 'ClientCheckoutSucessfulCtrl'
+    })
+
     .state('client.view_products', {
       url : '/view_products',
       templateUrl: 'templates/client/view_products.html',
       controller : 'ClientViewProductCtrl'
     })
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 });

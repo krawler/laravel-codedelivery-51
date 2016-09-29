@@ -13,4 +13,11 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+<<<<<<< HEAD
+=======
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 </IfModule>

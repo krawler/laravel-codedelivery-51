@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
+<<<<<<< HEAD
         "laravel/framework": "5.1.*",
         "prettus/l5-repository": "^2.6",
         "bestmomo/scafold": "^1.0",
@@ -13,12 +14,23 @@
         "lucadegasperi/oauth2-server-laravel": "^5.1",
         "barryvdh/laravel-cors": "0.7.x",
         "league/fractal": "^0.13.0",
+=======
+        "laravel/framework": "5.2.*",
+        "prettus/l5-repository": "^2.6",
+        "bestmomo/scafold": "^1.0",
+        "laravelcollective/html" : "5.2.*"
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
+<<<<<<< HEAD
         "phpspec/phpspec": "~2.1"
+=======
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*"
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     },
     "autoload": {
         "classmap": [

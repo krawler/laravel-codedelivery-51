@@ -45,6 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
+<<<<<<< HEAD
             'root'   => storage_path('app'),
         ],
 
@@ -60,16 +61,30 @@ return [
             // 'passive'  => true,
             // 'ssl'      => true,
             // 'timeout'  => 30,
+=======
+            'root' => storage_path('app'),
+        ],
+
+        'public' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'visibility' => 'public',
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         ],
 
         's3' => [
             'driver' => 's3',
+<<<<<<< HEAD
             'key'    => 'your-key',
+=======
+            'key' => 'your-key',
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
             'secret' => 'your-secret',
             'region' => 'your-region',
             'bucket' => 'your-bucket',
         ],
 
+<<<<<<< HEAD
         'rackspace' => [
             'driver'    => 'rackspace',
             'username'  => 'your-username',
@@ -80,6 +95,8 @@ return [
             'url_type'  => 'publicURL',
         ],
 
+=======
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     ],
 
 ];

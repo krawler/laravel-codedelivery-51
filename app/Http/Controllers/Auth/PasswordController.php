@@ -27,6 +27,10 @@ class PasswordController extends Controller
      */
     public function __construct()
     {
+<<<<<<< HEAD
         $this->middleware('guest');
+=======
+        $this->middleware($this->guestMiddleware());
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     }
 }

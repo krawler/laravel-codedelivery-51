@@ -24,13 +24,27 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
+<<<<<<< HEAD
+=======
+     * Where to redirect users after login / registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
+
+    /**
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
      * Create a new authentication controller instance.
      *
      * @return void
      */
     public function __construct()
     {
+<<<<<<< HEAD
         $this->middleware('guest', ['except' => 'getLogout']);
+=======
+        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     }
 
     /**
@@ -44,7 +58,11 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+<<<<<<< HEAD
             'password' => 'required|confirmed|min:6',
+=======
+            'password' => 'required|min:6|confirmed',
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         ]);
     }
 
@@ -62,4 +80,12 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+<<<<<<< HEAD
+=======
+
+    public function login()
+    {
+        
+    }
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 }

@@ -1,10 +1,24 @@
 <?php
 
+<<<<<<< HEAD
+=======
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::group(['middleware' => 'cors'], function(){
 
     Route::post('oauth/access_token', function() {
@@ -36,6 +50,16 @@ Route::group(['middleware' => 'cors'], function(){
 
 Route::group(['prefix'=>'admin', 'as'=>'admin.'],function(){
 
+=======
+
+
+Route::group(['prefix'=>'auth', 'as'=>'auth.'],function(){
+    Route::get('login','Auth\AuthController@login');
+    Route::get('register','Auth\AuthController@register');
+});
+
+Route::group(['prefix'=>'admin', /*'middleware'=>'auth.checkrole',*/ 'as'=>'admin.'],function(){
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     Route::get('categories',['as' => 'categories.index', 'uses'=> 'CategoriesController@index']);
     Route::get('categories/create', ['as' => 'categories.create', 'uses'=> 'CategoriesController@create']);
     Route::post('categories/store', ['as' => 'categories.store', 'uses'=> 'CategoriesController@store']);
@@ -68,6 +92,7 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.'],function(){
 
 });
 
+<<<<<<< HEAD
 Route::group(['prefix' => 'costumer',  'as' => 'costumer.'], function(){
 
     Route::get('order', ['as'=>'order.index', 'uses'=>'CheckoutController@index']);
@@ -78,3 +103,10 @@ Route::group(['prefix' => 'costumer',  'as' => 'costumer.'], function(){
 
 
 
+=======
+Route::group(['prefix' => 'costumer', 'as' => 'costumer'], function(){
+
+    Route::get('order/create', ['as'=>'order.create', 'uses'=>'CheckoutController@create']);
+
+});
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f

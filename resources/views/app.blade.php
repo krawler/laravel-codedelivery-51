@@ -33,6 +33,7 @@
 
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
+<<<<<<< HEAD
 					<!-- Auth::user()->role == "admin") -->
 						<li><a href="{{ url('/') }}">Home</a></li>
 						<li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
@@ -42,21 +43,39 @@
 					<!--Auth::user()->role == "client")-->
 
 
+=======
+					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
+					<li><a href="{{ route('admin.products.index') }}">Produtos</a></li>
+					<li><a href="{{ route('admin.clients.index') }}">Clientes</a></li>
+					<li><a href="{{ route('admin.orders.index') }}">Pedidos</a></li>
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if(auth()->guest())
 						@if(!Request::is('auth/login'))
+<<<<<<< HEAD
 							<li><a href="{{ url('/login') }}">Login</a></li>
 						@endif
 						@if(!Request::is('auth/register'))
 							<li><a href="{{ url('/register') }}">Register</a></li>
+=======
+							<li><a href="{{ url('/auth/login') }}">Login</a></li>
+						@endif
+						@if(!Request::is('auth/register'))
+							<li><a href="{{ url('/auth/register') }}">Register</a></li>
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 						@endif
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+<<<<<<< HEAD
 								<li><a href="{{ url('/logout') }}">Logout</a></li>
+=======
+								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 							</ul>
 						</li>
 					@endif
@@ -70,7 +89,10 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
 
 	@yield('post-script')
+=======
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 </body>
 </html>

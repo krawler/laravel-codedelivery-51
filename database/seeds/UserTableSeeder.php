@@ -19,9 +19,14 @@ class UserTableSeeder extends Seeder
             'name' => 'User',
             'email' => 'user@user.com',
             'password' => bcrypt(123456),
+<<<<<<< HEAD
             'role' => 'client',
             'remember_token' => str_random(10)
         ])->client()->save(factory(\CodeDelivery\Models\Client::class)->make());
+=======
+            'role' => 'admin'
+        ]);
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
         factory(\CodeDelivery\Models\User::class)->create([
             'name' => 'Admin',

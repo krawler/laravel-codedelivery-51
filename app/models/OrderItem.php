@@ -12,7 +12,11 @@ class OrderItem extends Model implements Transformable
 
     protected  $fillable = [
         'order_id',
+<<<<<<< HEAD
         'product_id',
+=======
+        'product',
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         'price',
         'qtde',
     ];

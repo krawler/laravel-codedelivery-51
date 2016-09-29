@@ -4,6 +4,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+    | Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "environment" your application is currently
+    | running in. This may determine how you prefer to configure various
+    | services your application utilizes. Set this in your ".env" file.
+    |
+    */
+
+    'env' => env('APP_ENV', 'production'),
+
+    /*
+    |--------------------------------------------------------------------------
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -26,7 +42,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'url' => 'http://localhost',
+=======
+    'url' => env('APP_URL', 'http://localhost'),
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +98,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'key' => env('APP_KEY', 'SomeRandomString'),
+=======
+    'key' => env('APP_KEY'),
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
     'cipher' => 'AES-256-CBC',
 
@@ -97,6 +121,11 @@ return [
 
     'log' => env('APP_LOG', 'single'),
 
+<<<<<<< HEAD
+=======
+    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -113,13 +142,19 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+<<<<<<< HEAD
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
+=======
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+<<<<<<< HEAD
         Illuminate\Routing\ControllerServiceProvider::class,
+=======
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -137,6 +172,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+<<<<<<< HEAD
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         Bestmomo\Scafold\ScafoldServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
@@ -144,6 +180,11 @@ return [
         LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+=======
+        Collective\Html\HtmlServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Bestmomo\Scafold\ScafoldServiceProvider::class,
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
         /*
          * Application Service Providers...
@@ -152,6 +193,10 @@ return [
         CodeDelivery\Providers\AuthServiceProvider::class,
         CodeDelivery\Providers\EventServiceProvider::class,
         CodeDelivery\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
+=======
+        CodeDelivery\Providers\RepositoryServiceProvider::class,
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
     ],
 
@@ -168,6 +213,7 @@ return [
 
     'aliases' => [
 
+<<<<<<< HEAD
         'App'       => Illuminate\Support\Facades\App::class,
         'Artisan'   => Illuminate\Support\Facades\Artisan::class,
         'Auth'      => Illuminate\Support\Facades\Auth::class,
@@ -203,6 +249,40 @@ return [
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Authorizer' => \LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+=======
+        'App' => Illuminate\Support\Facades\App::class,
+        'Artisan' => Illuminate\Support\Facades\Artisan::class,
+        'Auth' => Illuminate\Support\Facades\Auth::class,
+        'Blade' => Illuminate\Support\Facades\Blade::class,
+        'Cache' => Illuminate\Support\Facades\Cache::class,
+        'Config' => Illuminate\Support\Facades\Config::class,
+        'Cookie' => Illuminate\Support\Facades\Cookie::class,
+        'Crypt' => Illuminate\Support\Facades\Crypt::class,
+        'DB' => Illuminate\Support\Facades\DB::class,
+        'Eloquent' => Illuminate\Database\Eloquent\Model::class,
+        'Event' => Illuminate\Support\Facades\Event::class,
+        'File' => Illuminate\Support\Facades\File::class,
+        'Gate' => Illuminate\Support\Facades\Gate::class,
+        'Hash' => Illuminate\Support\Facades\Hash::class,
+        'Lang' => Illuminate\Support\Facades\Lang::class,
+        'Log' => Illuminate\Support\Facades\Log::class,
+        'Mail' => Illuminate\Support\Facades\Mail::class,
+        'Password' => Illuminate\Support\Facades\Password::class,
+        'Queue' => Illuminate\Support\Facades\Queue::class,
+        'Redirect' => Illuminate\Support\Facades\Redirect::class,
+        'Redis' => Illuminate\Support\Facades\Redis::class,
+        'Request' => Illuminate\Support\Facades\Request::class,
+        'Response' => Illuminate\Support\Facades\Response::class,
+        'Route' => Illuminate\Support\Facades\Route::class,
+        'Schema' => Illuminate\Support\Facades\Schema::class,
+        'Session' => Illuminate\Support\Facades\Session::class,
+        'Storage' => Illuminate\Support\Facades\Storage::class,
+        'URL' => Illuminate\Support\Facades\URL::class,
+        'Validator' => Illuminate\Support\Facades\Validator::class,
+        'View' => Illuminate\Support\Facades\View::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
     ],
 

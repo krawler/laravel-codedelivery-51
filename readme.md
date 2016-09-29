@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ## Laravel PHP Framework
+=======
+# Laravel PHP Framework
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
@@ -8,7 +12,11 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
+<<<<<<< HEAD
 Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+=======
+Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
 ## Official Documentation
 
@@ -22,6 +30,12 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
+<<<<<<< HEAD
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+=======
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f

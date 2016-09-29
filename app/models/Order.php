@@ -17,6 +17,7 @@ class Order extends Model implements Transformable
         'status',
     ];
 
+<<<<<<< HEAD
     public function transform()
     {
         return [
@@ -25,6 +26,8 @@ class Order extends Model implements Transformable
         ];
     }
 
+=======
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     public function client()
     {
         return $this->belongsTo(Client::class);

@@ -135,7 +135,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'domain' => null,
+=======
+    'domain' => env('SESSION_DOMAIN', null),
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
     /*
     |--------------------------------------------------------------------------
@@ -150,4 +154,20 @@ return [
 
     'secure' => false,
 
+<<<<<<< HEAD
+=======
+    /*
+    |--------------------------------------------------------------------------
+    | HTTP Access Only
+    |--------------------------------------------------------------------------
+    |
+    | Setting this value to true will prevent JavaScript from accessing the
+    | value of the cookie and the cookie will only be accessible through
+    | the HTTP protocol. You are free to modify this option if needed.
+    |
+    */
+
+    'http_only' => true,
+
+>>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 ];
