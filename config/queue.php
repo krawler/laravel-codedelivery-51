@@ -16,7 +16,6 @@ return [
     |            "sqs", "iron", "redis"
 =======
     | Supported: "null", "sync", "database", "beanstalkd", "sqs", "redis"
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     |
     */
 
@@ -41,32 +40,25 @@ return [
 
         'database' => [
             'driver' => 'database',
-<<<<<<< HEAD
             'table'  => 'jobs',
             'queue'  => 'default',
-=======
             'table' => 'jobs',
             'queue' => 'default',
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
             'expire' => 60,
         ],
 
         'beanstalkd' => [
             'driver' => 'beanstalkd',
-<<<<<<< HEAD
             'host'   => 'localhost',
             'queue'  => 'default',
             'ttr'    => 60,
-=======
             'host' => 'localhost',
             'queue' => 'default',
             'ttr' => 60,
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         ],
 
         'sqs' => [
             'driver' => 'sqs',
-<<<<<<< HEAD
             'key'    => 'your-public-key',
             'secret' => 'your-secret-key',
             'queue'  => 'your-queue-url',
@@ -87,7 +79,6 @@ return [
             'connection' => 'default',
             'queue'      => 'default',
             'expire'     => 60,
-=======
             'key' => 'your-public-key',
             'secret' => 'your-secret-key',
             'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
@@ -100,7 +91,6 @@ return [
             'connection' => 'default',
             'queue' => 'default',
             'expire' => 60,
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         ],
 
     ],
@@ -118,11 +108,7 @@ return [
 
     'failed' => [
         'database' => env('DB_CONNECTION', 'mysql'),
-<<<<<<< HEAD
         'table'    => 'failed_jobs',
-=======
-        'table' => 'failed_jobs',
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     ],
 
 ];

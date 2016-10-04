@@ -24,29 +24,23 @@ return [
     ],
 
     'ses' => [
-<<<<<<< HEAD
-        'key'    => env('SES_KEY'),
-=======
         'key' => env('SES_KEY'),
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
 
-<<<<<<< HEAD
     'stripe' => [
         'model'  => CodeDelivery\User::class,
         'key'    => env('STRIPE_KEY'),
-=======
-    'sparkpost' => [
-        'secret' => env('SPARKPOST_SECRET'),
-    ],
+        'sparkpost' => [
+            'secret' => env('SPARKPOST_SECRET'),
+        ],
 
-    'stripe' => [
-        'model' => CodeDelivery\User::class,
-        'key' => env('STRIPE_KEY'),
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
-        'secret' => env('STRIPE_SECRET'),
-    ],
+        'stripe' => [
+            'model' => CodeDelivery\User::class,
+            'key' => env('STRIPE_KEY'),
+            'secret' => env('STRIPE_SECRET'),
+        ],
 
+    ],
 ];

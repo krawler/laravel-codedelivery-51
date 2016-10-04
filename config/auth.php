@@ -4,7 +4,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-<<<<<<< HEAD
     | Default Authentication Driver
     |--------------------------------------------------------------------------
     |
@@ -146,20 +145,18 @@ return [
     |
     */
 
-<<<<<<< HEAD
     'password' => [
         'email'  => 'emails.password',
         'table'  => 'password_resets',
         'expire' => 60,
-=======
-    'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'email' => 'auth.emails.password',
-            'table' => 'password_resets',
-            'expire' => 60,
+        'passwords' => [
+                'users' => [
+                    'provider' => 'users',
+                    'email' => 'auth.emails.password',
+                    'table' => 'password_resets',
+                    'expire' => 60,
+                ],
         ],
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
-    ],
 
+     ],
 ];

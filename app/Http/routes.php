@@ -1,7 +1,4 @@
 <?php
-
-<<<<<<< HEAD
-=======
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,13 +9,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 Route::group(['middleware' => 'cors'], function(){
 
     Route::post('oauth/access_token', function() {
@@ -48,10 +43,6 @@ Route::group(['middleware' => 'cors'], function(){
     });
 });
 
-Route::group(['prefix'=>'admin', 'as'=>'admin.'],function(){
-
-=======
-
 
 Route::group(['prefix'=>'auth', 'as'=>'auth.'],function(){
     Route::get('login','Auth\AuthController@login');
@@ -59,7 +50,6 @@ Route::group(['prefix'=>'auth', 'as'=>'auth.'],function(){
 });
 
 Route::group(['prefix'=>'admin', /*'middleware'=>'auth.checkrole',*/ 'as'=>'admin.'],function(){
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
     Route::get('categories',['as' => 'categories.index', 'uses'=> 'CategoriesController@index']);
     Route::get('categories/create', ['as' => 'categories.create', 'uses'=> 'CategoriesController@create']);
     Route::post('categories/store', ['as' => 'categories.store', 'uses'=> 'CategoriesController@store']);
@@ -92,7 +82,6 @@ Route::group(['prefix'=>'admin', /*'middleware'=>'auth.checkrole',*/ 'as'=>'admi
 
 });
 
-<<<<<<< HEAD
 Route::group(['prefix' => 'costumer',  'as' => 'costumer.'], function(){
 
     Route::get('order', ['as'=>'order.index', 'uses'=>'CheckoutController@index']);
@@ -101,12 +90,3 @@ Route::group(['prefix' => 'costumer',  'as' => 'costumer.'], function(){
 
 });
 
-
-
-=======
-Route::group(['prefix' => 'costumer', 'as' => 'costumer'], function(){
-
-    Route::get('order/create', ['as'=>'order.create', 'uses'=>'CheckoutController@create']);
-
-});
->>>>>>> 8338ce9c3cd850f2215745648192ff978e4be93f
