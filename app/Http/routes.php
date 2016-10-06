@@ -13,6 +13,10 @@ Route::group(['middleware' => 'cors'], function(){
 
     Route::group(['prefix'=>'api', 'middleware' => 'oauth', 'as'=>'api.'],function(){
 
+        Route::get('teste', function(){
+           return "teste";
+        });
+
         Route::group(['prefix'=>'client', 'middleware' => 'oauth.checkrole:client', 'as'=>'client.'],function(){
 
             Route::resource('order', 'Api\Client\ClientCheckoutController', ['except' => ['create', 'edit', 'destroy']]);
