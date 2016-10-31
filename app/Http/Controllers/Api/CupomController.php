@@ -2,13 +2,11 @@
 
 namespace CodeDelivery\Http\Controllers;
 
-use CodeDelivery\Repositories\CategoryRepository;
 use CodeDelivery\Repositories\CupomRepository;
-use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
 
-class CupomsController extends Controller
+class CupomController extends Controller
 {
     private $repository;
 
