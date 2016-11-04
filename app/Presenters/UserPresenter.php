@@ -3,6 +3,7 @@
 namespace CodeDelivery\Presenters;
 
 use CodeDelivery\Transformers\UserPresenterTransformer;
+use CodeDelivery\Transformers\UserTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
@@ -19,6 +20,6 @@ class UserPresenter extends FractalPresenter
      */
     public function getTransformer()
     {
-        return new UserPresenterTransformer();
+        return new UserTransformer();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace CodeDelivery\Transformers;
 
+use CodeDelivery\Models\User;
 use League\Fractal\TransformerAbstract;
 use CodeDelivery\models\UserPresenter;
 
@@ -18,7 +19,7 @@ class UserTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform(UserPresenter $model)
+    public function transform(User $model)
     {
         return [
             'id'         => (int) $model->id,
