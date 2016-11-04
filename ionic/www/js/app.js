@@ -9,7 +9,7 @@ angular.module('starter.services',[]);
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angular-oauth2', 'ngResource'])
 
 .constant('appConfig',{
-   baseUrl : 'http://localhost:8000'
+   baseUrl : 'http://192.168.1.100:8000'
 })
 
 .run(function($ionicPlatform) {
@@ -30,7 +30,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function ($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider, appConfig) {
+.config(function ($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider, appConfig, $provide) {
 
   OAuthProvider.configure({
     baseUrl: appConfig.baseUrl,
@@ -90,5 +90,37 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller : 'ClientViewProductCtrl'
     })
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
+
+    /*
+    $provide.decorator('OauthToken', ['$localStorage','$delegate', function($localStorage,$delegate){
+        Object.defineProperties($delegate,{
+          setToken: {
+            value : function(data){
+              return $localStorage.setObject('token', data);
+            },
+            enumerable: true,
+            configurable: true,
+            writable: true
+          },
+          getToken: {
+            value : function(){
+                return $localStorage.getObject('token');
+            },
+            enumerable: true,
+            configurable: true,
+            writable: true
+          },
+          removeToken: {
+            value : function(){
+              return $localStorage.setObject('token', null);
+            },
+            enumerable: true,
+            configurable: true,
+            writable: true
+          }
+        });
+      return $delegate;
+    }]);
+    */
 });
