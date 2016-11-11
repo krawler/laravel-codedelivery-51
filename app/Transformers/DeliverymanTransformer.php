@@ -4,18 +4,17 @@ namespace CodeDelivery\Transformers;
 
 use CodeDelivery\Models\User;
 use League\Fractal\TransformerAbstract;
-use CodeDelivery\models\UserPresenter;
 
 /**
- * Class UserPresenterTransformer
+ * Class DeliverymanTransformer
  * @package namespace CodeDelivery\Transformers;
  */
-class UserTransformer extends TransformerAbstract
+class DeliverymanTransformer extends TransformerAbstract
 {
 
     /**
-     * Transform the \UserPresenter entity
-     * @param \UserPresenter $model
+     * Transform the \Deliveryman entity
+     * @param \Deliveryman $model
      *
      * @return array
      */
@@ -26,7 +25,6 @@ class UserTransformer extends TransformerAbstract
 
             'name'       => $model->name,
             'email'      => $model->email,
-
 
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at

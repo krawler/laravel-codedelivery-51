@@ -15,4 +15,9 @@ class Cupom extends Model implements Transformable
             'value'
     ];
 
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
 }

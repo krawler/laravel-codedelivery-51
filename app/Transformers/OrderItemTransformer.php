@@ -2,31 +2,29 @@
 
 namespace CodeDelivery\Transformers;
 
-use CodeDelivery\Models\User;
 use League\Fractal\TransformerAbstract;
-use CodeDelivery\models\UserPresenter;
+use CodeDelivery\models\OrderItem;
 
 /**
- * Class UserPresenterTransformer
+ * Class OrderItemTransformer
  * @package namespace CodeDelivery\Transformers;
  */
-class UserTransformer extends TransformerAbstract
+class OrderItemTransformer extends TransformerAbstract
 {
 
     /**
-     * Transform the \UserPresenter entity
-     * @param \UserPresenter $model
+     * Transform the \OrderItem entity
+     * @param \OrderItem $model
      *
      * @return array
      */
-    public function transform(User $model)
+    public function transform(OrderItem $model)
     {
         return [
             'id'         => (int) $model->id,
 
-            'name'       => $model->name,
-            'email'      => $model->email,
-
+            'price'      => (float) $model->price,
+            'qtd'        => (float) $model->qtd,
 
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
