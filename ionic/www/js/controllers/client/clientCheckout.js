@@ -1,9 +1,9 @@
 /**
  * Created by rafael on 26/08/2016.
  */
-angular.module('starter.controllers',[])
-    .controller('ClientCheckoutCtrl',['$scope', '$state', '$cart', '$order','$ionicLoading', '$ionicPopup', '$cordovaBarcodeScanner', 'User',
-                                 function ($scope, $state, $cart, $order, $ionicLoading, $ionicPopup, $cordovaBarcodeScanner, User) {
+angular.module('starter.controllers')
+    .controller('ClientCheckoutCtrl',['$scope', '$state', '$cart', '$order','$ionicLoading', '$ionicPopup', 'User',
+                                 function ($scope, $state, $cart, $order, $ionicLoading, $ionicPopup, User) {
 
         User.authenticated({include : 'client'}, function(data){
             console.log(data.data);
@@ -44,6 +44,7 @@ angular.module('starter.controllers',[])
                 });
             });
         };
+        /*
         $scope.readBarCode = function(){
             $cordovaBarcodeScanner
                 .scan()
@@ -56,6 +57,7 @@ angular.module('starter.controllers',[])
                     });
                 });
         };
+        */
 
         $scope.removeCupom = function(){
             $cart.removeCupom();

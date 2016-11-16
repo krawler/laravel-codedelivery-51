@@ -9,7 +9,7 @@ angular.module('starter.services',[]);
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angular-oauth2', 'ngResource'])
 
 .constant('appConfig',{
-   baseUrl : 'http://192.168.1.100:8000'
+   baseUrl : 'http://localhost:8000'
 })
 
 .run(function($ionicPlatform) {
@@ -30,7 +30,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function ($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider, appConfig, $provide) {
+.config(function ($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider, appConfig) {
 
   OAuthProvider.configure({
     baseUrl: appConfig.baseUrl,
@@ -57,12 +57,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl : 'templates/main.html'
     })
 
+    .state('menu',{
+      url : '/menu',
+      templateUrl : 'templates/menu.html',
+      controller:function ($scope, $ionicSideMenuDelegate) {
+        $scope.abrirEsquerdo = function () {
+
+        },
+        $scope.abrirDireito = function () {
+
+        }
+      }
+    })
+
     .state('home',{
       url : '/home',
       templateUrl : 'templates/home.html',
-      controller: function ($scope) {
-
-      }
+      controller: 'HomeCtrl'
     })
 
     .state('client', {
