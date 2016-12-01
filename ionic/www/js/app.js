@@ -101,6 +101,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller : 'ClientViewProductCtrl'
     })
 
+      .state('client.view_orders', {
+        url:'/view_orders',
+        templateUrl: 'templates/client/view_order.html',
+        controller : 'ClientViewOrderCtrl'
+      })
+
     $urlRouterProvider.otherwise('/login');
 
     /*

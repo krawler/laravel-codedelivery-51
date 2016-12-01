@@ -43,6 +43,7 @@ angular.module('starter.controllers')
                     template: 'Pedido não realizado - Tente novamente'
                 });
             });
+            $state.go('client.view_orders');
         };
         /*
         $scope.readBarCode = function(){

@@ -6,6 +6,11 @@
     </div>
     <ion-content class="padding has-subheader">
         <ion-list show-delete="showDelete">
+            <ion-item class="item-balanced item-icon-left" ng-show="cupom.value != null">
+                <span class="icon ion-close" ng-click="removeCupom()"></span>
+                <strong>Cupom</strong>
+                <span class="badge badge-balanced">R$ {{cupom.value}}</span>
+            </ion-item>
             <ion-item ng-repeat="o in items" ng-click="openProductDetail($index)">
                 {{o.name}}
                 <div class="row">
@@ -19,6 +24,9 @@
                 </div>
                 <ion-delete-button class="ion ion-minus-circled" ng-click="removeItem($index)"></ion-delete-button>
             </ion-item>
+            <button type="button" class="button button-balanced button-full" ng-click="readBarCode()">
+                Adicionar Cupom
+            </button>
             <button type="button" class="button button-assertive button-full" ng-click="save()">
                 Salvar Pedido
             </button>

@@ -6,6 +6,13 @@ angular.module('starter.services')
         return $resource(appConfig.baseUrl + '/api/client/order/:id',{id: '@id'},{
             query:{
                 isArray :false
+            }            
+        });
+    }])
+    .factory('$orders', ['$resource','appConfig',function($resource, appConfig){
+        return $resource(appConfig.baseUrl + '/api/client/order/:user',{user: '@user'},{
+            query:{
+                isArray :false
             }
         });
     }]);

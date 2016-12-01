@@ -65,4 +65,13 @@ class ClientCheckoutController extends Controller
         return $order;
     }
 
+    public function showAllOrdersByUser($user)
+    {
+        $client = $this->userRepository->find($user)->client->id;
+        $orders = $this->orderRepository->with('items')->scopeQuery(function ($query) use($client){
+           return $query->where('client_id','=',$client);
+        });
+        return $orders;
+    }
+
 }

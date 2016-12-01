@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-header-bar class="bar bar-positive">
+        <h1 class="title">Seus Pedidos</h1>
+    </ion-header-bar>
+    <ion-content class="padding has-subheader">
+        <ion-list>
+            <ion-item ng-repeat="o in orders">
+                {{o.created_at.date}}
+                <span class="item-balanced text-center">
+                    {{status[o.status]}}
+                </span>
+                <span class="item-balanced text-right">
+                    {{o.items.data.length}} items
+                </span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
