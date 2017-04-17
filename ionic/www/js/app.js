@@ -5,11 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter.controllers',[]);
 angular.module('starter.services',[]);
+angular.module('starter.filters',[]);
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angular-oauth2', 'ngResource'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.filters',
+                           'angular-oauth2', 'ngResource', 'ngCordova'])
 
 .constant('appConfig',{
-   baseUrl : 'http://localhost:8000'
+   baseUrl : 'http://192.168.1.101:8000'
 })
 
 .run(function($ionicPlatform) {
@@ -57,18 +59,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl : 'templates/main.html'
     })
 
+      /*
     .state('menu',{
       url : '/menu',
       templateUrl : 'templates/menu.html',
-      controller:function ($scope, $ionicSideMenuDelegate) {
-        $scope.abrirEsquerdo = function () {
-
-        },
-        $scope.abrirDireito = function () {
-
-        }
-      }
+      controller: 'ClientMenuCtrl'
     })
+    */
 
     .state('home',{
       url : '/home',
@@ -79,7 +76,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('client', {
       abstract : true,
       url : '/client',
-      template: '<ion-nav-view/>'
+      templateUrl: 'templates/client/menu.html',
+      controller: 'ClientMenuCtrl'
+    })
+
+    .state('client.order', {
+      url : '/order',
+      templateUrl: 'templates/client/order.html',
+      controller : 'ClientOrderCtrl'
     })
 
     .state('client.checkout', {
@@ -87,6 +91,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       url : '/checkout',
       templateUrl: 'templates/client/client_checkout.html',
       controller : 'ClientCheckoutCtrl'
+    })
+
+    .state('client.checkout_successful', {
+      cache: false,
+      url : '/checkout/successful',
+      templateUrl: 'templates/client/checkout_successful.html',
+      controller : 'ClientCheckoutSuccessfulCtrl'
     })
 
     .state('client.checkout_item_detail', {

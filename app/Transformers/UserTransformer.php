@@ -23,7 +23,7 @@ class UserTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
+            'client'     => $model->client(),
             'name'       => $model->name,
             'email'      => $model->email,
 

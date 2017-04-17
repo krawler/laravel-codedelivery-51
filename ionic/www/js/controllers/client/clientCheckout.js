@@ -4,16 +4,12 @@
 angular.module('starter.controllers')
     .controller('ClientCheckoutCtrl',['$scope', '$state', '$cart', '$order','$ionicLoading', '$ionicPopup', 'User',
                                  function ($scope, $state, $cart, $order, $ionicLoading, $ionicPopup, User) {
-
-        User.authenticated({include : 'client'}, function(data){
-            console.log(data.data);
-        }, function(responseError){
-
-        });
+                                     
 
         var cart = $cart.get();
         $scope.items = cart.items;
         $scope.total = cart.total;
+        $ionicLoading.hide();
         $scope.removeItem = function(i){
           $cart.removeItem(i);
           $scope.items.splice(i,1);
@@ -33,10 +29,11 @@ angular.module('starter.controllers')
             $ionicLoading.show({
                 template : 'Carregando...'
             });
-            $order.query({id: null}, {items: items}, function (data) {
-                console.log(data);
+            $order.save({id: null}, {items: items}, function (data) {
+                $state.go('client.checkout_successful');
                 $ionicLoading.hide();
             }, function (responseError) {
+                console.log(responseError);
                 $ionicLoading.hide();
                 $ionicPopup.alert({
                     title: 'Advertência',

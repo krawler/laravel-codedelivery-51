@@ -31,6 +31,7 @@ class OrdersController extends Controller
     public function store(Requests\OrderRequest $request)
     {
         $data = $request->all();
+        
         $this->repository->create($data);
 
         return redirect()->route('admin.orders.index');

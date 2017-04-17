@@ -8,6 +8,7 @@ use CodeDelivery\Repositories\ProductRepository;
 use CodeDelivery\Repositories\UserRepository;
 use CodeDelivery\Services\OrderService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use CodeDelivery\Http\Requests;
 use LucaDegasperi\OAuth2Server\Facades\Authorizer;
@@ -55,23 +56,12 @@ class ClientCheckoutController extends Controller
 
     public function show($id)
     {
-        $order = $this->orderRepository->with(['client', 'items'])->find($id);
-
-        /*$order->items->each(function($item){
-            $item->product;
-        });
-        */
+        $order = $this->orderRepository
+                    ->skipPresenter(false)
+                    ->with(['client', 'items'])
+                    ->find($id);
 
         return $order;
     }
-
-    public function showAllOrdersByUser($user)
-    {
-        $client = $this->userRepository->find($user)->client->id;
-        $orders = $this->orderRepository->with('items')->scopeQuery(function ($query) use($client){
-           return $query->where('client_id','=',$client);
-        });
-        return $orders;
-    }
-
+    
 }

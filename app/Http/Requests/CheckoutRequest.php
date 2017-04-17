@@ -31,6 +31,8 @@ class CheckoutRequest extends Request
                  $this->buildRulesItems($key,$val);
         }
 
+        return $rules;
+
     }
 
     public function buildRulesItems($key, array &$rules){

@@ -7,7 +7,6 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use CodeDelivery\Repositories\orderRepository;
 use CodeDelivery\Models\Order;
-use CodeDelivery\Validators\OrderValidator;
 
 /**
  * Class OrderRepositoryEloquent
@@ -16,9 +15,16 @@ use CodeDelivery\Validators\OrderValidator;
 class OrderRepositoryEloquent extends BaseRepository implements OrderRepository
 {
 
+    protected $skipPresenter = false;
+
     public function getByIdAndDeliveryman($id, $idDeliveryman){
 
-        $result = $this->with('items','client')->findWhere(['id' => $id, 'user_deliveryman_id' => $idDeliveryman]);
+
+        //$result = $this->with('items','client')->findWhere(['id' => $id, 'user_deliveryman_id' => $idDeliveryman]);
+        $result = $this->model
+            ->where('id', $id)
+            ->where('user_deliveryman_id', $idDeliveryman)
+            ->first();
 
         if($result instanceof Collection){
             $result = $result->first();
@@ -26,7 +32,12 @@ class OrderRepositoryEloquent extends BaseRepository implements OrderRepository
            //    $item->product;
           //  });
         }
-        return $result;
+
+        if($result){
+            return $this->parserResult($result);
+        }
+        
+        throw (new ModelNotFoundException())->setModel(get_class($this->model));
     }
 
     /**

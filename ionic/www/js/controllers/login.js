@@ -11,10 +11,17 @@ angular.module('starter.controllers')
         }
 
         $scope.login = function () {
-            OAuth.getAccessToken($scope.user)
+            var promisse = OAuth.getAccessToken($scope.user);
+            promisse
                 .then(function(data){
-                   $state.go('client.view_products');
+                    return User.authenticated({include: 'client'}).$promise;
+                })
+                .then(function(data){
+                    $localStorage.set('user', data.data);
+                    $state.go('client.checkout');
                 }, function (responseError) {
+                    $localStorage.set('user', null);
+                    OAuthToken.removeToken();
                     $ionicPopup.alert({
                         title : 'Advertência',
                         template : 'Login e/ou senha inválidos'

@@ -5,13 +5,21 @@
     <ion-content class="padding has-subheader">
         <ion-list>
             <ion-item ng-repeat="o in orders">
-                {{o.created_at.date}}
-                <span class="item-balanced text-center">
-                    {{status[o.status]}}
-                </span>
-                <span class="item-balanced text-right">
-                    {{o.items.data.length}} items
-                </span>
+                <div class="row">
+                    <div class="col">
+                        <h2>{{o.created_at.date| limitTo: 10 | date: 'dd/MM/yyyy'}}</h2>
+                        <p>{{o.product_names}}</p>
+                        <i class="ion ion-ios-cart"> {{o.items.data.length}} items </i>
+                    </div>
+                    <div class="col text-center">
+                        <p class="item-balanced text-center">
+                            {{status[o.status]}}
+                        </p>
+                    </div>
+                    <div class="col text-right">
+                        <i class="ion ion-social-usd">{{o.total}}</i>
+                    </div>
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>

@@ -3,38 +3,22 @@
  */
 angular.module('starter.controllers')
     .controller('ClientViewOrderCtrl',[
-        '$scope', '$state', '$orders', 'User', '$ionicLoading',
-        function($scope, $state, $orders, User, $ionicLoading){
+        '$scope', '$state', '$order', 'User', '$ionicLoading', '$stateParams',
+        function($scope, $state, $order, User, $ionicLoading, $stateParams){
 
-            $scope.orders = [];
-            $scope.status = ['Pendente', 'A caminho', 'entregue'];
+           $scope.orders = {}
 
-            User.authenticated({include : 'client'}, function(data){
-
-                $orders.query({user: data.data.id, include : 'items'}, function (data) {
-                    console.log(data.data);
-                    if(angular.isArray(data.data) == false){
-                        $scope.orders[0] = data.data;
-                    }else{
-                        $scope.orders = data.data;
-                    }
-                    $ionicLoading.hide();
-                }, function (responseError) {
-                    $ionicLoading.hide();
-                    $ionicPopup.alert({
-                        title: 'Advertência',
-                        template: 'Pedido não realizado - Tente novamente'
-                    });
-                });
-
-            });
-            
             $ionicLoading.show({
                 template: 'Carregando...'
             });
 
+            $order.get({id: $stateParams.id, include: "items,cupom"}, function(data){
+                $scope.orders = data.data;
 
-
+                $ionicLoading.hide();
+            }, function(responseError){
+                $ionicLoading.hide();
+            })
 
      }]);
 
