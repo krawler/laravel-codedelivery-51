@@ -75,6 +75,11 @@ angular.module('starter.services')
             $localStorage.setObject(key,cart);
         };
 
+        this.getTotalFinal = function(){
+            var cart = this.get();
+            return cart.total - (cart.cupom.value || 0);
+        };
+
         function calculateSubTotal(item) {
             return parseFloat(item.price) * item.qtd;
         }
